@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- icon -->
+    <link rel="icon" href="icon/logo.png">
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- font awsome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>toDo</title>
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="navbar-brand">
+            <i class="fa-solid fa-check" style="color: #000000;"></i>
+            toDoList
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-item nav-link" href="/"><i class="fa-solid fa-calendar-days"></i> toDay</a>
+            <a class="nav-item nav-link" href="/work"><i class="fa-solid fa-briefcase" style="color: #000000;"></i> Work</a>
+          </div>
+          </div>
+      </nav>
+
+      <!-- todolist body -->
+    <div class="fullCard">
+      <div class="card" id="card">
+        <div class="card-header text-center">
+            <h1><%= listTitle %></h1>
+        </div>
+        <ul class="list-group list-group-flush">
+            <%  for(var i = 0;i < list.length;i++) {  %>
+                <li class="list-group-item"> <input type="checkbox"> <p style="display: inline"> <%= list[i] %> </p> </li>
+           <%  }  %>  
+        </ul>
+        <!-- form for input -->
+        <div class="text-center mt-4 mb-4">
+        <form  action="/" method="post">
+            <input class="w-75" type="text" name="task" placeholder="Enter Your Task Here" autofocus>
+            <button class="btn btn-lg btn-outline-success mt-3" type="submit" name="list" value="<%= listTitle %>">Add Task</button>
+          </form>    
+        </div>
+      </div>
+    </div>
+      
+      <footer>
+        copyright @ yL 2023
+      </footer>
+      
+      <!-- bootstrap cdn -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
+
